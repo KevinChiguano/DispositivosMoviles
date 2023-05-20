@@ -7,7 +7,6 @@
 
     <style name="Theme.DispositivosMoviles" parent="Base.Theme.DispositivosMoviles" >
         <item name="android:fontFamily">@font/roboto</item>
-        <item name="android:backgroundTint">@color/background_dm</item>
         <item name="android:textColor">@color/fond_color_dm</item>
         <item name="android:textSize">14sp</item>
     </style>
@@ -28,6 +27,10 @@
 
     <style name="ButtonCancel" parent="ButtonsGeneral">
         <item name="android:backgroundTint">@color/low_gray</item>
+    </style>
+
+    <style name="ButtonOpciones" parent="ButtonsGeneral">
+        <item name="android:backgroundTint">@color/naranja</item>
     </style>
 
 </resources>

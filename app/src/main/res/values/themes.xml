@@ -14,7 +14,7 @@
     <style name="textTitle">
         <item name="android:textColor">@color/title_color_dm</item>
         <item name="android:textSize">48sp</item>
-        <item name="android:fontFamily">@font/satisfy</item>
+        <item name="android:fontFamily">@font/roboto</item>
         <item name="android:textStyle">bold</item>
     </style>
 

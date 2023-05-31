@@ -1,5 +1,6 @@
 package com.example.dispositivosmoviles.ui.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -32,7 +33,7 @@ class MainActivity : AppCompatActivity() {
         initClass()
 
         //ejemplo
-        initServices()
+        //initServices()
     }
 
     override fun onDestroy() {
@@ -45,7 +46,22 @@ class MainActivity : AppCompatActivity() {
         binding.botonUno.setOnClickListener {
             //txtBuscar.text = "El evento se ha ejecutado"
             //Toast.makeText(this,"Esto es un ejemplo", Toast.LENGTH_SHORT).show()
-            binding.txtBuscar.text="El codigo ejecuta correctamente"
+            //binding.txtBuscar.text="El codigo ejecuta correctamente"
+
+            //this-> de esta activity
+            //ir a la otra MainActivity2::class.java
+            var intent = Intent(
+                this,
+                PrincipalActivity::class.java
+            )
+
+            //enviar datos a otra activity
+            //se compone de clave-valor
+            intent.putExtra("var1", binding.txtBuscar.text.toString())
+
+            //iniciar el objeto intent
+            startActivity(intent)
+
         }
 
 
@@ -60,9 +76,11 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Esto es un ejemplo", Toast.LENGTH_SHORT).show()
         }*/
 
-        var f = Snackbar.make(binding.botonUno, "Este es otro mensaje",Snackbar.LENGTH_LONG)
+        /*var f = Snackbar.make(binding.botonUno, "Este es otro mensaje",Snackbar.LENGTH_LONG)
 
-        f.show()
+        f.show()*/
+
+
     }
 
     private fun initServices(){

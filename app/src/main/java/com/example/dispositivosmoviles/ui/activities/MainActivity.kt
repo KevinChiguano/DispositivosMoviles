@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import com.example.dispositivosmoviles.databinding.ActivityMainBinding
+import com.example.dispositivosmoviles.logic.validator.LoginValidator
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -31,9 +32,6 @@ class MainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         initClass()
-
-        //ejemplo
-        //initServices()
     }
 
     override fun onDestroy() {
@@ -43,47 +41,27 @@ class MainActivity : AppCompatActivity() {
     private fun initClass() {
         //var boton2 = binding.botonUno
         //No es necesario crear variables al usar biding
-        binding.botonUno.setOnClickListener {
-            //txtBuscar.text = "El evento se ha ejecutado"
-            //Toast.makeText(this,"Esto es un ejemplo", Toast.LENGTH_SHORT).show()
-            //binding.txtBuscar.text="El codigo ejecuta correctamente"
+        binding.btnLogin.setOnClickListener {
 
-            //this-> de esta activity
-            //ir a la otra MainActivity2::class.java
-            var intent = Intent(
-                this,
-                PrincipalActivity::class.java
-            )
+            val check = LoginValidator().checkLogin(binding.txtName.text.toString(),binding.txtPass.text.toString())
 
-            //enviar datos a otra activity
-            //se compone de clave-valor
-            intent.putExtra("var1", binding.txtBuscar.text.toString())
+            if(check){
 
-            //iniciar el objeto intent
-            startActivity(intent)
+                var intent = Intent(
+                    this,
+                    PrincipalActivity::class.java
+                )
+
+                intent.putExtra("var1", binding.txtName.text.toString())
+
+                startActivity(intent)
+
+            }else{
+                Snackbar.make(binding.textView1,"Usuario o contraseña invalidos", Snackbar.LENGTH_LONG).show()
+            }
 
         }
 
-
-        /*var botonUno = findViewById<TextView>(R.id.botonUno)
-        var txtBuscar = findViewById<TextView>(R.id.txt_buscar)
-
-        botonUno.text = "INGRESAR"
-        botonUno.editableText.clear()
-
-        botonUno.setOnClickListener{
-            txtBuscar.text = "El evento se ha ejecutado"
-            Toast.makeText(this,"Esto es un ejemplo", Toast.LENGTH_SHORT).show()
-        }*/
-
-        /*var f = Snackbar.make(binding.botonUno, "Este es otro mensaje",Snackbar.LENGTH_LONG)
-
-        f.show()*/
-
-
     }
 
-    private fun initServices(){
-
-    }
 }

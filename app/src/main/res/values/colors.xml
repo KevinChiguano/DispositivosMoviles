@@ -10,4 +10,7 @@
     <color name="naranja">#EF6C00</color>
     <color name="text_bg">#D5D5D6</color>
 
+    <color name="text_buton_datos">#ff5f6b</color>
+    <color name="text_pregunta">#808B96</color>
+
 </resources>

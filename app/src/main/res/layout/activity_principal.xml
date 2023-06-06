@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background_dm"
     tools:context=".ui.activities.PrincipalActivity">
 
     <Button
@@ -14,6 +13,7 @@
         android:layout_marginStart="136dp"
         android:layout_marginTop="152dp"
         android:text="Button"
+        style="@style/ButtonIngresar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textName" />
 
@@ -25,6 +25,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="104dp"
         android:text="Segunda Activity"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -47,7 +47,7 @@ class PrincipalActivity : AppCompatActivity() {
             startActivity(
                 Intent(
                     this,
-                    MainActivity::class.java
+                    LoginActivity::class.java
                 )
             )
 
